@@ -15,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RepoMultiImplementation.Interfaces;
 using RepoMultiImplementation.Models;
+using RepoMultiImplementation.Controllers;
 
 namespace RepoMultiImplementation
 {
@@ -44,11 +45,18 @@ namespace RepoMultiImplementation
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddControllersAsServices();
 
             // specify specific repo implementation types per entity
             services.AddScoped<IAsyncRepository<Customer>, EfAsyncRepository<Customer>>();
             services.AddScoped<IAsyncRepository<Product>, DapperProductRepository>(x => new DapperProductRepository(Configuration.GetConnectionString("DefaultConnection")));
+
+
+            // specify specific repo implementation to use per controller
+            services.AddScoped<EfAsyncRepository<Car>>();
+            services.AddScoped<CarsController>(x => new CarsController(x.GetRequiredService<EfAsyncRepository<Car>>()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,6 +12,7 @@ namespace RepoMultiImplementation.Data
         }
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Product> Product { get; set; }
+        public DbSet<Car> Car { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -24,6 +25,10 @@ namespace RepoMultiImplementation.Data
             builder.Entity<Product>().HasData(
                 new Product { Id = 1, Name = "Repository" },
                 new Product { Id = 2, Name = "Not a repository" });
+
+            builder.Entity<Car>().HasData(
+                new Car { Id = 1, Name = "Tesla Model X" },
+                new Car { Id = 2, Name = "Honda Ridgeline" });
         }
     }
 }
