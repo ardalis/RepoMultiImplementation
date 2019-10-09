@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoMultiImplementation", "RepoMultiImplementation\RepoMultiImplementation.csproj", "{E08632CD-FA00-4C78-B64E-07E0AE4AFE5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E08632CD-FA00-4C78-B64E-07E0AE4AFE5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08632CD-FA00-4C78-B64E-07E0AE4AFE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08632CD-FA00-4C78-B64E-07E0AE4AFE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08632CD-FA00-4C78-B64E-07E0AE4AFE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27F87AC7-AC7F-435A-98AC-64FD20C79562}
+	EndGlobalSection
+EndGlobal
